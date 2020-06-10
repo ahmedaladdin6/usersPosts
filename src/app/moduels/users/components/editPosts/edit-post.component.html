@@ -1,0 +1,31 @@
+<ng-container *ngIf="!badRequest;else handelBadRequest">
+    <form [formGroup]="userPostForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="usr">Title post:</label>
+            <textarea class="form-control" rows="5" formControlName="title" required></textarea>
+        </div>
+        <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
+            <div *ngIf="title.errors.required" class="text-left">
+                please enter the title of the post
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="comment">Body post:</label>
+            <textarea class="form-control" rows="5" formControlName="body" required></textarea>
+        </div>
+        <div *ngIf="body.invalid && (body.dirty || body.touched)" class="alert alert-danger">
+            <div *ngIf="body.errors.required" class="text-left">
+                please enter the body of the post
+            </div>
+        </div>
+        <div class="buttons">
+            <button type="submit" class="btn btn-primary" [disabled]="!userPostForm.valid">Update</button>
+        </div>
+    </form>
+</ng-container>
+<ng-template #handelBadRequest>
+    <div class="badRequest">
+        <span> Error in the server or Bad connection , Please try again</span>
+    </div>
+</ng-template>
+<div class="loader" *ngIf="loadData"></div>

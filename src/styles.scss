@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+body { 
+    font-family: Roboto, Arial, sans-serif;
+  }
+.boldText{
+    font-weight: bolder;
+}
+.card{
+    border:1px solid rgb(146, 139, 139);
+    padding: 15px;
+    background-color: #efefef;
+}
+div.buttons{
+    width:100%;
+    text-align: right;
+    button{
+        width:20%;
+    }
+}
+div.badRequest{
+    background-color: #ffd7d7;
+    color:#a00c20;
+    font-weight: bolder;
+    font-size: 30px;
+    text-align: center;
+    padding:20px;
+    border-radius: 10px;
+}
+.loader {
+      /* center the loader */
+      position: fixed;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      background: url('//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Phi_fenomeni.gif/50px-Phi_fenomeni.gif') 
+              50% 50% no-repeat rgba(249,249,249,0.5);
+   /* end center the loader */
+  }

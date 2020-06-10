@@ -1,0 +1,23 @@
+<ng-container *ngIf="!badRequest;else handelBadRequest">
+  <div class="row card mb-2" *ngFor="let user of users; let i =index">
+    <div class="content">
+      <div class="col-md-1 image">
+        <img class="img-fluid" src="../../../assets/images/avatar.png" alt="users_image">
+      </div>
+      <div class="col-md-11 info">
+        <span class="boldText">{{user.name}}</span>
+        <p>
+          to see all posts of {{user.name}} click
+          <a routerLink="/posts/userName/{{user.name}}/userId/{{user.id}}/">here</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #handelBadRequest>
+  <div class="badRequest">
+    <span> Error in the server or Bad connection , Please try again</span>
+  </div>
+</ng-template>
+
+<div class="loader" *ngIf="loadData"></div>

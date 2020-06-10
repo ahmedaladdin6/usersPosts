@@ -1,0 +1,15 @@
+.content{
+    background-color: #fff;
+    padding:15px;
+    div.info{
+        p{
+            color:rgb(163, 156, 156);
+        }
+    }
+}
+
+@media only screen and (max-width: 766px) {
+     img{
+         width: 17% ;
+     }
+  }

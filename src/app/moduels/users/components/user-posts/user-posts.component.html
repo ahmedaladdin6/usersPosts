@@ -1,0 +1,16 @@
+<ng-container *ngIf="!badRequest;else handelBadRequest">
+    <h3>Welcome in "{{UserName}}" page </h3>
+    <p> "{{UserName}}" has write ({{posts?.length}}) posts , if you want to edit or delete any post just click on it</p>
+    <div class="card mb-2" *ngFor="let post of posts">
+        <div (click)="viewPost(post.id)">
+            <p class="boldText"> {{post.title}}</p>
+            <p>{{post.body}}</p>
+        </div>
+    </div>
+</ng-container>
+<ng-template #handelBadRequest>
+    <div class="badRequest">
+        <span> Error in the server or Bad connection , Please try again</span>
+    </div>
+</ng-template>
+<div class="loader" *ngIf="loadData"></div>
